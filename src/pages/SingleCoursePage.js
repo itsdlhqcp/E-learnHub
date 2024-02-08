@@ -20,7 +20,7 @@ const SingleCoursePage = () => {
     fetchSingleCourse(id);
   }, []);
 
-  const {id: courseID, category, image, course_name, description, rating_count, rating_star, students, creator, updated_date, lang, actual_price, discounted_price, what_you_will_learn: learnItems, content} = single_course;
+  const {id: courseID, category, image, course_name, description, rating_count, rating_star, students, creator, enrollmentStatus, lang, discounted_price, what_you_will_learn: learnItems, content} = single_course;
 
   return (
     <SingleCourseWrapper>
@@ -48,7 +48,7 @@ const SingleCoursePage = () => {
               </li>
               <li className='flex'>
                 <span><MdInfo /></span>
-                <span className='fs-14 course-info-txt fw-5'>Last updated {updated_date}</span>
+                <span className='fs-14 course-info-txt fw-5'>Enrollment {enrollmentStatus}</span>
               </li>
               <li className='flex'>
                 <span><TbWorld /></span>

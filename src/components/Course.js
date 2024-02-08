@@ -5,7 +5,7 @@ import StarRating from "../components/StarRating";
 import { useCartContext } from '../context/cart_context';
 
 const Course = (props) => {
-  const {id, image, course_name, creator, discounted_price, rating_count, rating_star, category} = props;
+  const {id, image, course_name, creator, discounted_price, rating_count, rating_star, category,enrollmentStatus} = props;
   const {addToCart} = useCartContext();
 
   return (
@@ -21,6 +21,7 @@ const Course = (props) => {
           <StarRating rating_star = {rating_star} />
           <span className='rating-count'>({rating_count})</span>
         </div>
+        <span className='fs-14 course-info-txt fw-5'>Enrollment {enrollmentStatus}</span>
       </div>
       <div className='item-btns flex'>
         <Link to = {`/courses/${id}`} className = "item-btn see-details-btn">See details</Link>
